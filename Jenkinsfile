@@ -2,7 +2,9 @@ pipeline {
 
 agent any
 
-
+options {
+    skipDefaultCheckout(true)
+}
 stages {
 
 
@@ -10,8 +12,22 @@ stage('Checkout Code'){
 
 steps{
 
-git branch:'main',
-url:'https://github.com/MutahirTayyab/Mutahir_Static_Portfolio.git'
+        bat """
+
+        if exist .git (
+
+            echo Repository exists
+            git fetch origin main
+            git reset --hard origin/main
+
+        ) else (
+
+            echo First time checkout
+            git clone https://github.com/MutahirTayyab/Mutahir_Static_Portfolio.git .
+
+        )
+
+        """
 
 }
 
