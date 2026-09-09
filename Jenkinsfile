@@ -23,13 +23,16 @@ stage('Deploy Website Files'){
 
 steps{
 
-bat '''
+                bat """
 
-xcopy /E /I /Y ^
-C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Mutahir_Static_Portfolio\\* ^
-C:\\inetpub\\wwwroot\\Mutahir_Static_Portfolio\\
+                echo Deploying Static Website...
 
-'''
+                xcopy /E /I /Y "%WORKSPACE%\\*" "C:\\inetpub\\wwwroot\\Mutahir_Static_Portfolio\\"
+
+                echo Deployment Completed
+
+                """
+
 
 }
 
