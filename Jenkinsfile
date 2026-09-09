@@ -11,7 +11,7 @@ stage('Checkout Code'){
 steps{
 
 git branch:'main',
-url:'YOUR_GITHUB_REPO'
+url:'https://github.com/MutahirTayyab/Mutahir_Static_Portfolio.git'
 
 }
 
