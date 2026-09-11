@@ -8,7 +8,7 @@ options {
 stages {
 
 
-stage('Checkout Code'){
+stage('Checkout and Update Code'){
 
 steps{
 
